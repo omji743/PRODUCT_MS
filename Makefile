@@ -129,30 +129,6 @@ ProductCRUD/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProductCRUD.dir/build.make CMakeFiles/ProductCRUD.dir/build
 .PHONY : ProductCRUD/fast
 
-src/ProductDatabase.o: src/ProductDatabase.cpp.o
-.PHONY : src/ProductDatabase.o
-
-# target to build an object file
-src/ProductDatabase.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProductCRUD.dir/build.make CMakeFiles/ProductCRUD.dir/src/ProductDatabase.cpp.o
-.PHONY : src/ProductDatabase.cpp.o
-
-src/ProductDatabase.i: src/ProductDatabase.cpp.i
-.PHONY : src/ProductDatabase.i
-
-# target to preprocess a source file
-src/ProductDatabase.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProductCRUD.dir/build.make CMakeFiles/ProductCRUD.dir/src/ProductDatabase.cpp.i
-.PHONY : src/ProductDatabase.cpp.i
-
-src/ProductDatabase.s: src/ProductDatabase.cpp.s
-.PHONY : src/ProductDatabase.s
-
-# target to generate assembly for a file
-src/ProductDatabase.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProductCRUD.dir/build.make CMakeFiles/ProductCRUD.dir/src/ProductDatabase.cpp.s
-.PHONY : src/ProductDatabase.cpp.s
-
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -177,6 +153,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProductCRUD.dir/build.make CMakeFiles/ProductCRUD.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/product/ProductDatabase.o: src/product/ProductDatabase.cpp.o
+.PHONY : src/product/ProductDatabase.o
+
+# target to build an object file
+src/product/ProductDatabase.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProductCRUD.dir/build.make CMakeFiles/ProductCRUD.dir/src/product/ProductDatabase.cpp.o
+.PHONY : src/product/ProductDatabase.cpp.o
+
+src/product/ProductDatabase.i: src/product/ProductDatabase.cpp.i
+.PHONY : src/product/ProductDatabase.i
+
+# target to preprocess a source file
+src/product/ProductDatabase.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProductCRUD.dir/build.make CMakeFiles/ProductCRUD.dir/src/product/ProductDatabase.cpp.i
+.PHONY : src/product/ProductDatabase.cpp.i
+
+src/product/ProductDatabase.s: src/product/ProductDatabase.cpp.s
+.PHONY : src/product/ProductDatabase.s
+
+# target to generate assembly for a file
+src/product/ProductDatabase.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProductCRUD.dir/build.make CMakeFiles/ProductCRUD.dir/src/product/ProductDatabase.cpp.s
+.PHONY : src/product/ProductDatabase.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -186,12 +186,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ProductCRUD"
-	@echo "... src/ProductDatabase.o"
-	@echo "... src/ProductDatabase.i"
-	@echo "... src/ProductDatabase.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/product/ProductDatabase.o"
+	@echo "... src/product/ProductDatabase.i"
+	@echo "... src/product/ProductDatabase.s"
 .PHONY : help
 
 

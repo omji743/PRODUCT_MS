@@ -1,13 +1,21 @@
 #include "crow.h"
-#include "Product.h"
-#include "ProductDatabase.h"
+#include "product/Product.h"
+#include "product/ProductDatabase.h"
 #include <vector>
 
 int main() {
     crow::SimpleApp app;
     ProductDatabase product_db;
+    // CROW_ROUTE(app, "/read")
+// ([&](const crow::request& req) {
+    //     auto& ctx = app.get_context<crow::CookieParser>(req);
+    //     // Read cookies with get_cookie
+    //     auto value = ctx.get_cookie("my_cookie");
+    //     return "value: " + value;
+    // });
 
     // Create a product
+
     CROW_ROUTE(app, "/products").methods(crow::HTTPMethod::POST)([&product_db](const crow::request& req) {
         auto json_data = crow::json::load(req.body);
         if (!json_data) {
@@ -66,16 +74,14 @@ int main() {
         if (!json_data) {
             return crow::response(400, "Invalid JSON");
         }
-
-        auto name = json_data["productName"].s();
-        auto price = json_data["productPrice"].d();
-        auto stock = json_data["productStock"].i();
-        auto category = json_data["productCategory"].s();
-
+         auto name = json_data["product_name"].s();
+        auto price = json_data["price"].d();
+        auto stock = json_data["stock"].i();
+        auto category = json_data["category"].s();
         product_db.update_product(Product(id, name, price, stock, category, "", ""));
         return crow::response(200, "Product updated");
     });
-
+    
     // Delete a product
     CROW_ROUTE(app, "/products/<int>").methods(crow::HTTPMethod::DELETE)([&product_db](const crow::request& req, int id) {
         product_db.delete_product(id);
