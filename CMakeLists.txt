@@ -28,7 +28,9 @@ add_executable(crowsample
     src/auth/auth.cpp  # Source file for user authentication
     src/db/db_connection.cpp 
     src/product/ProductDatabase.cpp 
-    src/auth/authMiddleware.cpp# Source file for database connection
+    src/auth/authMiddleware/authMiddleware.cpp
+    src/product/productController/productController.cpp
+    src/helper/isAdmin.cpp
 )
 
 # Link against MySQL, bcrypt
