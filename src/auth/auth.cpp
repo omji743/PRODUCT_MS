@@ -100,45 +100,52 @@ crow::json::wvalue userRegister(const crow::request &req)
     return response;
 }
 
-crow::json::wvalue userLogin(const crow::request &req)
+std::pair<crow::json::wvalue, std::string> userLogin(const crow::request &req)
 {
     sql::mysql::MySQL_Driver *driver;
     sql::Connection *con;
     crow::json::wvalue response;
+    std::string token;
 
     try
     {
+        // Database connection setup
         driver = sql::mysql::get_mysql_driver_instance();
         con = driver->connect("tcp://127.0.0.1:3306", "root", "your_password");
         con->setSchema("ims");
 
+        // Parsing request JSON body
         crow::json::rvalue user = crow::json::load(req.body);
         std::string email = user["email"].s();
         std::string password = user["password"].s();
 
+        // Validate inputs
         if (email.empty() || password.empty())
         {
             response["error"] = "Please provide both email and password.";
-            return response;
+            return std::make_pair(response, token);
         }
 
+        // Prepare SQL statement
         sql::PreparedStatement *stmt = con->prepareStatement(
             "SELECT password, user_id FROM users WHERE email = ?");
         stmt->setString(1, email);
         sql::ResultSet *result = stmt->executeQuery();
 
+        // Check if user exists
         if (!result->next())
         {
             response["error"] = "Invalid email or password.";
             delete stmt;
             delete result;
             delete con;
-            return response;
+            return std::make_pair(response, token);
         }
 
         std::string storedHashedPassword = result->getString("password");
         int userId = result->getInt("user_id");
 
+        // Check if password matches
         if (bcrypt_checkpw(password.c_str(), storedHashedPassword.c_str()) != 0)
         {
             response["error"] = "Invalid email or password.";
@@ -147,19 +154,18 @@ crow::json::wvalue userLogin(const crow::request &req)
         {
             // Generate JWT token
             std::string secret = "your_jwt_secret";
-            auto token = jwt::create()
-                             .set_issuer("auth_service")
-                             .set_subject(email)
-                             .set_payload_claim("userId", jwt::claim(std::to_string(userId)))
-                             .set_expires_at(std::chrono::system_clock::now() + std::chrono::hours(1))
-                             .sign(jwt::algorithm::hs256{secret});
+            token = jwt::create()
+                        .set_issuer("auth_service")
+                        .set_subject(email)
+                        .set_payload_claim("userId", jwt::claim(std::to_string(userId)))
+                        .set_expires_at(std::chrono::system_clock::now() + std::chrono::hours(1))
+                        .sign(jwt::algorithm::hs256{secret});
 
-            // Set the token in the response cookie
             response["success"] = "Login successful!";
             response["token"] = token;
-
         }
 
+        // Clean up resources
         delete stmt;
         delete result;
         delete con;
@@ -170,5 +176,7 @@ crow::json::wvalue userLogin(const crow::request &req)
         response["error"] = "Database error occurred.";
     }
 
-    return response;
+    // Return the response JSON and token
+    return std::make_pair(response, token);
 }
+

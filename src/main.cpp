@@ -2,48 +2,46 @@
 #include "auth/auth.h"
 #include "db/db_connection.h"
 #include "crow/middlewares/cookie_parser.h"
+#include <string>
+#include "product/Product.h"
+#include "product/ProductDatabase.h"
+#include <vector>
+#include "auth/authMiddleware.h"
 
 int main()
 {
-    // crow::SimpleApp app;s
+    // crow::SimpleApp app;
     crow::App<crow::CookieParser> app;
 
-
     CROW_ROUTE(app, "/register").methods(crow::HTTPMethod::POST)([](const crow::request &req)
-    {
+                                                                 {
         crow::json::wvalue response = userRegister(req);
-        return response; 
-    });
+        return response; });
 
     CROW_ROUTE(app, "/login").methods(crow::HTTPMethod::POST)([](const crow::request &req)
-    {
-        crow::json::wvalue response = userLogin(req);
-        return response;
-    });
+                                                              {
+    std::pair<crow::json::wvalue, std::string> response = userLogin(req);
+    crow::response res;
 
-    CROW_ROUTE(app, "/")
-    ([]()
+    if (!response.second.empty()) {
+        res.add_header("Set-Cookie", "token=" + response.second + "; Path=/; HttpOnly; Max-Age=3600; SameSite=Strict");
+    }
+    res.body = response.first.dump(); 
+    return res; });
+
+    CROW_ROUTE(app, "/add-product")
+    ([&](const crow::request &req)
      {
-        return "Hello world!";
-    });
-
-
-    CROW_ROUTE(app, "/set_cookie")
-    ([](const crow::request& req) {
-        crow::response res;
-        res.add_header("Set-Cookie", "my_cookie=my_value; Path=/; HttpOnly");
-        return res;
-    });
-
-
-    CROW_ROUTE(app, "/read")
-    ([&](const crow::request& req) {
-        auto& ctx = app.get_context<crow::CookieParser>(req);
-        // Read cookies with get_cookie
-        auto value = ctx.get_cookie("my_cookie");
-        return "value: " + value;
-    });
-
+         std::pair<bool, std::string> user = authMiddleware(req, app);
+         if (user.first)
+         {
+             return crow::response(200, user.second); // 200 OK with the user email
+         }
+         else
+         {
+             return crow::response(401, "Unauthorized"); // 401 Unauthorized response
+         }
+     });
 
     app.port(18080).multithreaded().run();
 

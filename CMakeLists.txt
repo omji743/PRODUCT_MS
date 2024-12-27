@@ -26,7 +26,9 @@ include_directories(${MYSQL_INCLUDE_DIR} ${BCRYPT_INCLUDE_DIR} ${JWT_INCLUDE_DIR
 add_executable(crowsample 
     src/main.cpp
     src/auth/auth.cpp  # Source file for user authentication
-    src/db/db_connection.cpp  # Source file for database connection
+    src/db/db_connection.cpp 
+    src/product/ProductDatabase.cpp 
+    src/auth/authMiddleware.cpp# Source file for database connection
 )
 
 # Link against MySQL, bcrypt
