@@ -48,4 +48,13 @@ void setupOrderRoutes(crow::App<crow::CookieParser> &app) {
             return crow::response(401, "Unauthorized");
         }
     });
+
+     CROW_ROUTE(app, "/generate-report")([&](const crow::request& req) {
+        std::pair<bool, std::string> user = authMiddleware(req, app);
+        if (user.first) {
+            return ordersReport(req, user.second);
+        } else {
+            return crow::response(401, "Unauthorized");
+        }
+    });
 }

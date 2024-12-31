@@ -11,4 +11,6 @@ crow::response getAllOrders(const crow::request &req, std::string user_email);
 
 crow::response manageOrderStatus(const crow::request &req,int order_id, std::string user_email);
 
+crow::response ordersReport(const crow::request &req, std::string user_email);
+
 #endif

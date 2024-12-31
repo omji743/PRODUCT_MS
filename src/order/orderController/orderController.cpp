@@ -297,3 +297,112 @@ crow::response manageOrderStatus(const crow::request &req, int order_id, std::st
         return crow::response(500, errorJson);
     }
 }
+
+crow::response ordersReport(const crow::request &req, std::string user_email) {
+    try {
+        // Set up logging
+        auto file_logger = spdlog::basic_logger_mt("file_logger", "/home/kunal/crowcpp/src/logging/logs.txt");
+        spdlog::set_default_logger(file_logger);
+        spdlog::info("Admin user '{}' is requesting the order report", user_email);
+
+        // Check if the user is an Admin
+        if (!isAdmin(user_email)) {
+            spdlog::warn("Permission denied: User '{}' is not an admin", user_email);
+            crow::json::wvalue errorJson;
+            errorJson["error"] = "Permission denied: Only admins can view order report.";
+            return crow::response(403, errorJson);
+        }
+
+        // Establish database connection
+        spdlog::info("Establishing database connection...");
+        sql::Connection *conn = getDbConnection();
+        spdlog::info("Database connection established");
+
+        sql::PreparedStatement *stmt = conn->prepareStatement("SELECT * FROM Orders;");
+        sql::ResultSet *res = stmt->executeQuery();
+        spdlog::info("Executed query: SELECT * FROM Orders");
+
+        std::vector<crow::json::wvalue> orders;
+
+        // Iterate over each order
+        while (res->next()) {
+            int order_id = res->getInt("order_id");
+            int user_id = res->getInt("user_id");
+            double total_price = res->getDouble("total_price");
+            std::string order_date = res->getString("order_date");
+            std::string status = res->getString("status");
+
+            // Fetch user information for the given user_id
+            spdlog::info("Fetching user details for user_id={}", user_id);
+            sql::PreparedStatement *stmt_user = conn->prepareStatement("SELECT username, email FROM users WHERE user_id=?");
+            stmt_user->setInt(1, user_id);
+            sql::ResultSet *res_user = stmt_user->executeQuery();
+
+            if (!res_user->next()) {
+                spdlog::warn("User not found for user_id={}", user_id);
+                crow::json::wvalue errorJson;
+                errorJson["error"] = "User not found for user_id: " + std::to_string(user_id);
+                return crow::response(404, errorJson);
+            }
+
+            std::string user_email = res_user->getString("email");
+            std::string username = res_user->getString("username");
+            spdlog::info("User details found: {} ({})", username, user_email);
+
+            // Fetch order details for the given order_id
+            spdlog::info("Fetching order details for order_id={}", order_id);
+            sql::PreparedStatement *stmt_details = conn->prepareStatement(
+                "SELECT orderDetails.product_id, orderDetails.quantity, orderDetails.price_at_order_time "
+                "FROM orderDetails WHERE orderDetails.order_id=?;"
+            );
+            stmt_details->setInt(1, order_id);
+            sql::ResultSet *res_details = stmt_details->executeQuery();
+
+            crow::json::wvalue products = crow::json::wvalue::list(); // Create an empty JSON array for products
+
+            // Collect product details for this order
+            int product_idx = 0;
+            while (res_details->next()) {
+                int product_id = res_details->getInt("product_id");
+                int quantity = res_details->getInt("quantity");
+                double price_at_order_time = res_details->getDouble("price_at_order_time");
+
+                crow::json::wvalue product;
+                product["product_id"] = product_id;
+                product["quantity"] = quantity;
+                product["price_at_order_time"] = price_at_order_time;
+
+                // Add the product to the products array by index
+                products[product_idx++] = std::move(product);
+            }
+
+            // Construct the order report
+            crow::json::wvalue order_report;
+            order_report["order_id"] = order_id;
+            order_report["user_id"] = user_id;
+            order_report["username"] = username;
+            order_report["email"] = user_email;
+            order_report["total_price"] = total_price;
+            order_report["order_date"] = order_date;
+            order_report["status"] = status;
+            order_report["products"] = std::move(products);
+
+            // Move the order report into the orders vector
+            orders.push_back(std::move(order_report));
+        }
+
+        spdlog::info("Generated order report with {} orders", orders.size());
+
+        // Return the JSON response containing the orders report
+        crow::json::wvalue response;
+        response["orders"] = std::move(orders);
+        return crow::response(response);
+
+    } catch (const std::exception &e) {
+        // Log error message and return 500 internal server error
+        spdlog::error("Error occurred while generating the order report: {}", e.what());
+        crow::json::wvalue errorJson;
+        errorJson["error"] = "Internal server error: " + std::string(e.what());
+        return crow::response(500, errorJson);
+    }
+}
