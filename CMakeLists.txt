@@ -19,18 +19,23 @@ set(BCRYPT_LIB_DIR ${CMAKE_SOURCE_DIR}/lib/bcrypt)
 # JWT include path (header-only)
 set(JWT_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/lib/jwt-cpp/include)
 
+set(SPDLOG_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/lib/spdlog/include)
+
 # Add include directories
-include_directories(${MYSQL_INCLUDE_DIR} ${BCRYPT_INCLUDE_DIR} ${JWT_INCLUDE_DIR} ${INCLUDE_PATHS} ${CMAKE_SOURCE_DIR}/src)
+include_directories(${MYSQL_INCLUDE_DIR} ${BCRYPT_INCLUDE_DIR} ${JWT_INCLUDE_DIR} ${SPDLOG_INCLUDE_DIR} ${INCLUDE_PATHS} ${CMAKE_SOURCE_DIR}/src)
 
 # Add executable target
 add_executable(crowsample 
     src/main.cpp
-    src/auth/auth.cpp  # Source file for user authentication
+    src/auth/auth.cpp 
     src/db/db_connection.cpp 
     src/product/ProductDatabase.cpp 
     src/auth/authMiddleware/authMiddleware.cpp
     src/product/productController/productController.cpp
     src/helper/isAdmin.cpp
+    src/order/orderDetails.cpp
+    src/order/orderController/orderController.cpp
+    src/order/order.cpp
 )
 
 # Link against MySQL, bcrypt

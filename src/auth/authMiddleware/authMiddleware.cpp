@@ -30,7 +30,6 @@ std::pair<bool,std::string> authMiddleware(const crow::request& req, crow::App<c
 
         std::string userId = userIdClaim.as_string();
 
-        std::cout<<userId<<" "<<emailClaim<<std::endl;
         return std::make_pair(true,emailClaim);
 
 
