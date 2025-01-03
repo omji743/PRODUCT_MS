@@ -18,8 +18,7 @@ void setProductRoutes(crow::App<crow::CookieParser> &app) {
 
     // Get all products route
     CROW_ROUTE(app, "/get-products")([]() {
-        crow::json::wvalue resp = getAllProducts();
-        return crow::response(200, resp);
+        return getAllProducts();
     });
 
     // Get a single product by ID route

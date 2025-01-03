@@ -30,7 +30,7 @@ crow::json::wvalue OrderDetails::getOrderDetailsByOrderId(sql::Connection* con, 
     crow::json::wvalue orderDetailsJson;
 
     try {
-        std::cout<<order_id<<std::endl;
+        std::cout << "Fetching details for order ID: " << order_id << std::endl;
         sql::PreparedStatement* stmt = con->prepareStatement(
             "SELECT product_id, quantity, price_at_order_time "
             "FROM orderDetails WHERE order_id = ?");
@@ -46,7 +46,8 @@ crow::json::wvalue OrderDetails::getOrderDetailsByOrderId(sql::Connection* con, 
             double price_at_order_time = res->getDouble("price_at_order_time");
 
             // Create a JSON object for each order detail and add it to the array
-            std::cout<<product_id<<" "<<quantity<<" "<<price_at_order_time<<std::endl; 
+            std::cout << "Product ID: " << product_id << " Quantity: " << quantity 
+                      << " Price: " << price_at_order_time << std::endl; 
             crow::json::wvalue orderDetailJson;
             orderDetailJson["product_id"] = product_id;
             orderDetailJson["quantity"] = quantity;
@@ -55,18 +56,19 @@ crow::json::wvalue OrderDetails::getOrderDetailsByOrderId(sql::Connection* con, 
             // Add the individual order detail to the array
             orderDetailsArray.push_back(orderDetailJson);
         }
-    crow::json::wvalue resp;
 
-        // You can return the full JSON array or wrap it in a top-level JSON object
-    resp = crow::json::wvalue::list(orderDetailsArray);
-    return resp;
+        // If no order details were found, return an error
+        if (orderDetailsArray.empty()) {
+            orderDetailsJson["error"] = "No order details found for the given order ID.";
+        } else {
+            // Return the full JSON array or wrap it in a top-level JSON object
+            orderDetailsJson = crow::json::wvalue::list(orderDetailsArray);
+        }
 
     }
     catch (sql::SQLException &e) {
         std::cerr << "Error fetching order details: " << e.what() << std::endl;
         orderDetailsJson["error"] = "Error fetching order details";
-    return orderDetailsJson;
-
     }
-
+    return orderDetailsJson;
 }

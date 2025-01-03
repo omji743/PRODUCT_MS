@@ -178,8 +178,15 @@ crow::response getOrderDetailsById(const crow::request& req, int& order_id, std:
         // Get the order details as a JSON object from the OrderDetails class
         crow::json::wvalue orderDetailsJson = OrderDetails::getOrderDetailsByOrderId(con, order_id);
 
+        // Check if order details are empty, and return a 404 if no data is found
+        if (orderDetailsJson.size()==1) {
+            crow::json::wvalue errorJson;
+            errorJson["error"] = "Order not found for the given order ID.";
+            return crow::response(404, errorJson); // 404 Not Found
+        }
+
         // Return the response with JSON payload
-        return crow::response(orderDetailsJson);
+        return crow::response(200, orderDetailsJson);
     }
     catch (const sql::SQLException& e) {
         std::cerr << "Database error: " << e.what() << '\n';
@@ -258,6 +265,7 @@ crow::response manageOrderStatus(const crow::request &req, int order_id, std::st
             return crow::response(403, errorJson);
             }
 
+
         sql::Connection* con = getDbConnection();
         auto json_data = crow::json::load(req.body);
 
@@ -266,6 +274,12 @@ crow::response manageOrderStatus(const crow::request &req, int order_id, std::st
             spdlog::error("Invalid JSON received in the request body for order ID: {}", order_id);
             crow::json::wvalue errorJson;
             errorJson["error"] = "Invalid JSON";
+            return crow::response(400, errorJson);
+        }
+        if(!json_data.has("updated_status")){
+            spdlog::error("Missing fields in the request body for order ID: {}", order_id);
+            crow::json::wvalue errorJson;
+            errorJson["error"] = "Missing fields";
             return crow::response(400, errorJson);
         }
 

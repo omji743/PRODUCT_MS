@@ -2,9 +2,9 @@
 #define PRODUCT_CONTROLLER_H
 #include "crow.h"
 
-crow::json::wvalue getAllProducts();
+crow::response getAllProducts();
 
-crow::response addProduct(const crow::request&,std::string);
+crow::response addProduct(const crow::request& req,std::string user_email);
 
 crow::response getProductById(const crow::request& req, int id);
 

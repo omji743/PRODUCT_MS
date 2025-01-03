@@ -10,3 +10,484 @@
 [2024-12-31 11:00:20.877] [file_logger] [info] Starting user login process.
 [2024-12-31 11:00:20.883] [file_logger] [info] Connected to the database successfully.
 [2024-12-31 11:00:21.070] [file_logger] [info] User registered successfully: admin@gmail.com
+[2024-12-31 14:31:21.780] [file_logger] [info] Starting user login process.
+[2024-12-31 14:31:21.785] [file_logger] [info] Connected to the database successfully.
+[2024-12-31 14:31:21.974] [file_logger] [info] User registered successfully: admin@gmail.com
+[2025-01-03 12:08:12.192] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 12:08:12.201] [file_logger] [error] Invalid JSON in request body
+[2025-01-03 12:12:46.628] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 12:12:46.637] [file_logger] [error] Invalid JSON in request body
+[2025-01-03 12:12:46.642] [file_logger] [info] Received request to place order for user: kunal0054@gmail.com
+[2025-01-03 12:12:46.651] [file_logger] [info] Fetching user data from database for email: kunal0054@gmail.com
+[2025-01-03 12:12:46.651] [file_logger] [warning] User with email kunal0054@gmail.com not found
+[2025-01-03 12:17:14.131] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 12:17:14.139] [file_logger] [error] Invalid JSON in request body
+[2025-01-03 12:17:14.144] [file_logger] [info] Received request to place order for user: kunal0054@gmail.com
+[2025-01-03 12:17:14.152] [file_logger] [info] Fetching user data from database for email: kunal0054@gmail.com
+[2025-01-03 12:17:14.153] [file_logger] [warning] User with email kunal0054@gmail.com not found
+[2025-01-03 12:17:14.158] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 12:17:14.167] [file_logger] [info] Fetching user data from database for email: kunal54@gmail.com
+[2025-01-03 12:17:14.167] [file_logger] [info] User found with ID: 6
+[2025-01-03 12:17:14.167] [file_logger] [info] Checking stock for product ID: 101 with requested quantity: 2
+[2025-01-03 12:17:14.168] [file_logger] [warning] Product ID 101 not found
+[2025-01-03 12:17:14.173] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 12:17:14.182] [file_logger] [info] Fetching user data from database for email: kunal54@gmail.com
+[2025-01-03 12:17:14.182] [file_logger] [info] User found with ID: 6
+[2025-01-03 12:17:14.182] [file_logger] [info] Checking stock for product ID: 101 with requested quantity: 201
+[2025-01-03 12:17:14.183] [file_logger] [warning] Product ID 101 not found
+[2025-01-03 12:18:13.035] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 12:18:13.043] [file_logger] [error] Invalid JSON in request body
+[2025-01-03 12:18:13.048] [file_logger] [info] Received request to place order for user: kunal0054@gmail.com
+[2025-01-03 12:18:13.056] [file_logger] [info] Fetching user data from database for email: kunal0054@gmail.com
+[2025-01-03 12:18:13.056] [file_logger] [warning] User with email kunal0054@gmail.com not found
+[2025-01-03 12:18:13.062] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 12:18:13.070] [file_logger] [info] Fetching user data from database for email: kunal54@gmail.com
+[2025-01-03 12:18:13.071] [file_logger] [info] User found with ID: 6
+[2025-01-03 12:18:13.071] [file_logger] [info] Checking stock for product ID: 101 with requested quantity: 2
+[2025-01-03 12:18:13.071] [file_logger] [warning] Product ID 101 not found
+[2025-01-03 12:18:13.076] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 12:18:13.085] [file_logger] [info] Fetching user data from database for email: kunal54@gmail.com
+[2025-01-03 12:18:13.085] [file_logger] [info] User found with ID: 6
+[2025-01-03 12:18:13.085] [file_logger] [info] Checking stock for product ID: 1 with requested quantity: 201
+[2025-01-03 12:18:13.086] [file_logger] [warning] Insufficient stock for product ID 1. Requested: 201, Available: 12
+[2025-01-03 12:19:37.867] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 12:19:37.875] [file_logger] [error] Invalid JSON in request body
+[2025-01-03 12:19:37.881] [file_logger] [info] Received request to place order for user: kunal0054@gmail.com
+[2025-01-03 12:19:37.889] [file_logger] [info] Fetching user data from database for email: kunal0054@gmail.com
+[2025-01-03 12:19:37.890] [file_logger] [warning] User with email kunal0054@gmail.com not found
+[2025-01-03 12:19:37.895] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 12:19:37.903] [file_logger] [info] Fetching user data from database for email: kunal54@gmail.com
+[2025-01-03 12:19:37.904] [file_logger] [info] User found with ID: 6
+[2025-01-03 12:19:37.904] [file_logger] [info] Checking stock for product ID: 101 with requested quantity: 2
+[2025-01-03 12:19:37.904] [file_logger] [warning] Product ID 101 not found
+[2025-01-03 12:19:37.909] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 12:19:37.918] [file_logger] [info] Fetching user data from database for email: kunal54@gmail.com
+[2025-01-03 12:19:37.918] [file_logger] [info] User found with ID: 6
+[2025-01-03 12:19:37.918] [file_logger] [info] Checking stock for product ID: 1 with requested quantity: 201
+[2025-01-03 12:19:37.919] [file_logger] [warning] Insufficient stock for product ID 1. Requested: 201, Available: 12
+[2025-01-03 12:22:42.852] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 12:22:42.861] [file_logger] [error] Invalid JSON in request body
+[2025-01-03 12:22:42.866] [file_logger] [info] Received request to place order for user: kunal0054@gmail.com
+[2025-01-03 12:22:42.874] [file_logger] [info] Fetching user data from database for email: kunal0054@gmail.com
+[2025-01-03 12:22:42.875] [file_logger] [warning] User with email kunal0054@gmail.com not found
+[2025-01-03 12:22:42.880] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 12:22:42.889] [file_logger] [info] Fetching user data from database for email: kunal54@gmail.com
+[2025-01-03 12:22:42.889] [file_logger] [info] User found with ID: 6
+[2025-01-03 12:22:42.889] [file_logger] [info] Checking stock for product ID: 101 with requested quantity: 2
+[2025-01-03 12:22:42.889] [file_logger] [warning] Product ID 101 not found
+[2025-01-03 12:22:42.895] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 12:22:42.903] [file_logger] [info] Fetching user data from database for email: kunal54@gmail.com
+[2025-01-03 12:22:42.903] [file_logger] [info] User found with ID: 6
+[2025-01-03 12:22:42.903] [file_logger] [info] Checking stock for product ID: 1 with requested quantity: 201
+[2025-01-03 12:22:42.904] [file_logger] [warning] Insufficient stock for product ID 1. Requested: 201, Available: 12
+[2025-01-03 12:24:38.303] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 12:24:38.311] [file_logger] [error] Invalid JSON in request body
+[2025-01-03 12:24:38.316] [file_logger] [info] Received request to place order for user: kunal0054@gmail.com
+[2025-01-03 12:24:38.324] [file_logger] [info] Fetching user data from database for email: kunal0054@gmail.com
+[2025-01-03 12:24:38.325] [file_logger] [warning] User with email kunal0054@gmail.com not found
+[2025-01-03 12:24:38.330] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 12:24:38.338] [file_logger] [info] Fetching user data from database for email: kunal54@gmail.com
+[2025-01-03 12:24:38.338] [file_logger] [info] User found with ID: 6
+[2025-01-03 12:24:38.338] [file_logger] [info] Checking stock for product ID: 101 with requested quantity: 2
+[2025-01-03 12:24:38.338] [file_logger] [warning] Product ID 101 not found
+[2025-01-03 12:24:38.343] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 12:24:38.352] [file_logger] [info] Fetching user data from database for email: kunal54@gmail.com
+[2025-01-03 12:24:38.352] [file_logger] [info] User found with ID: 6
+[2025-01-03 12:24:38.352] [file_logger] [info] Checking stock for product ID: 1 with requested quantity: 201
+[2025-01-03 12:24:38.353] [file_logger] [warning] Insufficient stock for product ID 1. Requested: 201, Available: 12
+[2025-01-03 12:24:38.358] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 12:24:38.368] [file_logger] [info] Fetching user data from database for email: kunal54@gmail.com
+[2025-01-03 12:24:38.368] [file_logger] [info] User found with ID: 6
+[2025-01-03 12:24:38.368] [file_logger] [info] Checking stock for product ID: 1 with requested quantity: 2
+[2025-01-03 12:24:38.369] [file_logger] [info] Checking stock for product ID: 2 with requested quantity: 1
+[2025-01-03 12:24:38.369] [file_logger] [info] Inserting order into the database for user ID: 6 with total price: 6486.63
+[2025-01-03 12:24:38.380] [file_logger] [info] Order placed successfully with order ID: 8
+[2025-01-03 12:24:38.381] [file_logger] [info] Inserting product details for order ID: 8. Product ID: 1, Quantity: 2, Price: 542.21
+[2025-01-03 12:24:38.386] [file_logger] [info] Inserting product details for order ID: 8. Product ID: 2, Quantity: 1, Price: 5402.21
+[2025-01-03 12:24:38.392] [file_logger] [info] All products added to order details. Stock updated.
+[2025-01-03 12:36:10.135] [file_logger] [info] Starting user login process.
+[2025-01-03 12:36:10.140] [file_logger] [info] Connected to the database successfully.
+[2025-01-03 12:36:10.327] [file_logger] [info] User registered successfully: admin@gmail.com
+[2025-01-03 12:41:06.126] [file_logger] [info] Adding product: name=Shirt, price=5201, stock=12, category=cloths
+[2025-01-03 12:41:06.129] [file_logger] [info] Product added successfully: Shirt
+[2025-01-03 12:44:47.258] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 12:44:47.266] [file_logger] [error] Invalid JSON in request body
+[2025-01-03 12:44:47.272] [file_logger] [info] Received request to place order for user: kunal0054@gmail.com
+[2025-01-03 12:44:47.280] [file_logger] [info] Fetching user data from database for email: kunal0054@gmail.com
+[2025-01-03 12:44:47.280] [file_logger] [warning] User with email kunal0054@gmail.com not found
+[2025-01-03 12:44:47.286] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 12:44:47.295] [file_logger] [info] Fetching user data from database for email: kunal54@gmail.com
+[2025-01-03 12:44:47.295] [file_logger] [info] User found with ID: 6
+[2025-01-03 12:44:47.295] [file_logger] [info] Checking stock for product ID: 101 with requested quantity: 2
+[2025-01-03 12:44:47.295] [file_logger] [warning] Product ID 101 not found
+[2025-01-03 12:44:47.300] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 12:44:47.309] [file_logger] [info] Fetching user data from database for email: kunal54@gmail.com
+[2025-01-03 12:44:47.309] [file_logger] [info] User found with ID: 6
+[2025-01-03 12:44:47.309] [file_logger] [info] Checking stock for product ID: 1 with requested quantity: 201
+[2025-01-03 12:44:47.310] [file_logger] [warning] Insufficient stock for product ID 1. Requested: 201, Available: 10
+[2025-01-03 12:44:47.315] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 12:44:47.323] [file_logger] [info] Fetching user data from database for email: kunal54@gmail.com
+[2025-01-03 12:44:47.324] [file_logger] [info] User found with ID: 6
+[2025-01-03 12:44:47.324] [file_logger] [info] Checking stock for product ID: 1 with requested quantity: 2
+[2025-01-03 12:44:47.324] [file_logger] [info] Checking stock for product ID: 2 with requested quantity: 1
+[2025-01-03 12:44:47.324] [file_logger] [info] Inserting order into the database for user ID: 6 with total price: 6486.63
+[2025-01-03 12:44:47.327] [file_logger] [info] Order placed successfully with order ID: 9
+[2025-01-03 12:44:47.328] [file_logger] [info] Inserting product details for order ID: 9. Product ID: 1, Quantity: 2, Price: 542.21
+[2025-01-03 12:44:47.333] [file_logger] [info] Inserting product details for order ID: 9. Product ID: 2, Quantity: 1, Price: 5402.21
+[2025-01-03 12:44:47.338] [file_logger] [info] All products added to order details. Stock updated.
+[2025-01-03 12:58:19.362] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 12:58:19.370] [file_logger] [error] Invalid JSON in request body
+[2025-01-03 12:58:19.375] [file_logger] [info] Received request to place order for user: kunal0054@gmail.com
+[2025-01-03 12:58:19.384] [file_logger] [info] Fetching user data from database for email: kunal0054@gmail.com
+[2025-01-03 12:58:19.384] [file_logger] [warning] User with email kunal0054@gmail.com not found
+[2025-01-03 12:58:19.389] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 12:58:19.397] [file_logger] [info] Fetching user data from database for email: kunal54@gmail.com
+[2025-01-03 12:58:19.398] [file_logger] [info] User found with ID: 6
+[2025-01-03 12:58:19.398] [file_logger] [info] Checking stock for product ID: 101 with requested quantity: 2
+[2025-01-03 12:58:19.398] [file_logger] [warning] Product ID 101 not found
+[2025-01-03 12:58:19.403] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 12:58:19.411] [file_logger] [info] Fetching user data from database for email: kunal54@gmail.com
+[2025-01-03 12:58:19.412] [file_logger] [info] User found with ID: 6
+[2025-01-03 12:58:19.412] [file_logger] [info] Checking stock for product ID: 1 with requested quantity: 201
+[2025-01-03 12:58:19.412] [file_logger] [warning] Insufficient stock for product ID 1. Requested: 201, Available: 8
+[2025-01-03 12:58:19.418] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 12:58:19.426] [file_logger] [info] Fetching user data from database for email: kunal54@gmail.com
+[2025-01-03 12:58:19.426] [file_logger] [info] User found with ID: 6
+[2025-01-03 12:58:19.426] [file_logger] [info] Checking stock for product ID: 1 with requested quantity: 2
+[2025-01-03 12:58:19.427] [file_logger] [info] Checking stock for product ID: 2 with requested quantity: 1
+[2025-01-03 12:58:19.427] [file_logger] [info] Inserting order into the database for user ID: 6 with total price: 6486.63
+[2025-01-03 12:58:19.432] [file_logger] [info] Order placed successfully with order ID: 10
+[2025-01-03 12:58:19.433] [file_logger] [info] Inserting product details for order ID: 10. Product ID: 1, Quantity: 2, Price: 542.21
+[2025-01-03 12:58:19.438] [file_logger] [info] Inserting product details for order ID: 10. Product ID: 2, Quantity: 1, Price: 5402.21
+[2025-01-03 12:58:19.443] [file_logger] [info] All products added to order details. Stock updated.
+[2025-01-03 12:58:19.464] [file_logger] [warning] Access denied for user: kunal54@gmail.com. Only admins can add products
+[2025-01-03 12:58:19.489] [file_logger] [error] Invalid JSON in request body
+[2025-01-03 12:58:19.515] [file_logger] [info] Adding product: name=Shirt, price=5201, stock=12, category=cloths
+[2025-01-03 12:58:19.518] [file_logger] [info] Product added successfully: Shirt
+[2025-01-03 12:58:19.539] [file_logger] [warning] Access denied for user: admin@example.com. Only admins can update products
+[2025-01-03 12:59:44.265] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 12:59:44.274] [file_logger] [error] Invalid JSON in request body
+[2025-01-03 12:59:44.279] [file_logger] [info] Received request to place order for user: kunal0054@gmail.com
+[2025-01-03 12:59:44.287] [file_logger] [info] Fetching user data from database for email: kunal0054@gmail.com
+[2025-01-03 12:59:44.288] [file_logger] [warning] User with email kunal0054@gmail.com not found
+[2025-01-03 12:59:44.293] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 12:59:44.302] [file_logger] [info] Fetching user data from database for email: kunal54@gmail.com
+[2025-01-03 12:59:44.302] [file_logger] [info] User found with ID: 6
+[2025-01-03 12:59:44.302] [file_logger] [info] Checking stock for product ID: 101 with requested quantity: 2
+[2025-01-03 12:59:44.303] [file_logger] [warning] Product ID 101 not found
+[2025-01-03 12:59:44.308] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 12:59:44.316] [file_logger] [info] Fetching user data from database for email: kunal54@gmail.com
+[2025-01-03 12:59:44.316] [file_logger] [info] User found with ID: 6
+[2025-01-03 12:59:44.316] [file_logger] [info] Checking stock for product ID: 1 with requested quantity: 201
+[2025-01-03 12:59:44.317] [file_logger] [warning] Insufficient stock for product ID 1. Requested: 201, Available: 6
+[2025-01-03 12:59:44.322] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 12:59:44.330] [file_logger] [info] Fetching user data from database for email: kunal54@gmail.com
+[2025-01-03 12:59:44.331] [file_logger] [info] User found with ID: 6
+[2025-01-03 12:59:44.331] [file_logger] [info] Checking stock for product ID: 1 with requested quantity: 2
+[2025-01-03 12:59:44.331] [file_logger] [info] Checking stock for product ID: 2 with requested quantity: 1
+[2025-01-03 12:59:44.331] [file_logger] [info] Inserting order into the database for user ID: 6 with total price: 6486.63
+[2025-01-03 12:59:44.334] [file_logger] [info] Order placed successfully with order ID: 11
+[2025-01-03 12:59:44.334] [file_logger] [info] Inserting product details for order ID: 11. Product ID: 1, Quantity: 2, Price: 542.21
+[2025-01-03 12:59:44.339] [file_logger] [info] Inserting product details for order ID: 11. Product ID: 2, Quantity: 1, Price: 5402.21
+[2025-01-03 12:59:44.343] [file_logger] [info] All products added to order details. Stock updated.
+[2025-01-03 12:59:44.364] [file_logger] [warning] Access denied for user: kunal54@gmail.com. Only admins can add products
+[2025-01-03 12:59:44.390] [file_logger] [error] Invalid JSON in request body
+[2025-01-03 12:59:44.417] [file_logger] [info] Adding product: name=Shirt, price=5201, stock=12, category=cloths
+[2025-01-03 12:59:44.419] [file_logger] [info] Product added successfully: Shirt
+[2025-01-03 12:59:44.441] [file_logger] [info] Updating product with ID: 1. New data - name=Updated Product, price=150.5, stock=100, category=Electronics
+[2025-01-03 12:59:44.444] [file_logger] [info] Product with ID: 1 successfully updated
+[2025-01-03 13:00:43.754] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 13:00:43.762] [file_logger] [error] Invalid JSON in request body
+[2025-01-03 13:00:43.767] [file_logger] [info] Received request to place order for user: kunal0054@gmail.com
+[2025-01-03 13:00:43.775] [file_logger] [info] Fetching user data from database for email: kunal0054@gmail.com
+[2025-01-03 13:00:43.775] [file_logger] [warning] User with email kunal0054@gmail.com not found
+[2025-01-03 13:00:43.780] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 13:00:43.790] [file_logger] [info] Fetching user data from database for email: kunal54@gmail.com
+[2025-01-03 13:00:43.790] [file_logger] [info] User found with ID: 6
+[2025-01-03 13:00:43.790] [file_logger] [info] Checking stock for product ID: 101 with requested quantity: 2
+[2025-01-03 13:00:43.791] [file_logger] [warning] Product ID 101 not found
+[2025-01-03 13:00:43.797] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 13:00:43.811] [file_logger] [info] Fetching user data from database for email: kunal54@gmail.com
+[2025-01-03 13:00:43.813] [file_logger] [info] User found with ID: 6
+[2025-01-03 13:00:43.813] [file_logger] [info] Checking stock for product ID: 1 with requested quantity: 201
+[2025-01-03 13:00:43.813] [file_logger] [warning] Insufficient stock for product ID 1. Requested: 201, Available: 100
+[2025-01-03 13:00:43.822] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 13:00:43.840] [file_logger] [info] Fetching user data from database for email: kunal54@gmail.com
+[2025-01-03 13:00:43.840] [file_logger] [info] User found with ID: 6
+[2025-01-03 13:00:43.840] [file_logger] [info] Checking stock for product ID: 1 with requested quantity: 2
+[2025-01-03 13:00:43.841] [file_logger] [info] Checking stock for product ID: 2 with requested quantity: 1
+[2025-01-03 13:00:43.841] [file_logger] [info] Inserting order into the database for user ID: 6 with total price: 5703.21
+[2025-01-03 13:00:43.844] [file_logger] [info] Order placed successfully with order ID: 12
+[2025-01-03 13:00:43.844] [file_logger] [info] Inserting product details for order ID: 12. Product ID: 1, Quantity: 2, Price: 150.5
+[2025-01-03 13:00:43.852] [file_logger] [info] Inserting product details for order ID: 12. Product ID: 2, Quantity: 1, Price: 5402.21
+[2025-01-03 13:00:43.857] [file_logger] [info] All products added to order details. Stock updated.
+[2025-01-03 13:00:43.878] [file_logger] [warning] Access denied for user: kunal54@gmail.com. Only admins can add products
+[2025-01-03 13:00:43.905] [file_logger] [error] Invalid JSON in request body
+[2025-01-03 13:00:43.931] [file_logger] [info] Adding product: name=Shirt, price=5201, stock=12, category=cloths
+[2025-01-03 13:00:43.936] [file_logger] [info] Product added successfully: Shirt
+[2025-01-03 13:00:43.960] [file_logger] [info] Updating product with ID: 1. New data - name=Updated Product, price=150.5, stock=100, category=Electronics
+[2025-01-03 13:00:43.966] [file_logger] [info] Product with ID: 1 successfully updated
+[2025-01-03 13:00:43.991] [file_logger] [warning] Access denied for user: user@example.com. Only admins can update products
+[2025-01-03 13:00:44.013] [file_logger] [warning] Access denied for user: admin@example.com. Only admins can update products
+[2025-01-03 13:00:44.034] [file_logger] [warning] Access denied for user: admin@example.com. Only admins can update products
+[2025-01-03 13:00:44.055] [file_logger] [warning] Access denied for user: admin@example.com. Only admins can update products
+[2025-01-03 13:00:44.077] [file_logger] [warning] Access denied for user: admin@example.com. Only admins can update products
+[2025-01-03 14:07:21.787] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 14:07:21.795] [file_logger] [error] Invalid JSON in request body
+[2025-01-03 14:07:21.801] [file_logger] [info] Received request to place order for user: kunal0054@gmail.com
+[2025-01-03 14:07:21.810] [file_logger] [info] Fetching user data from database for email: kunal0054@gmail.com
+[2025-01-03 14:07:21.810] [file_logger] [warning] User with email kunal0054@gmail.com not found
+[2025-01-03 14:07:21.815] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 14:07:21.824] [file_logger] [info] Fetching user data from database for email: kunal54@gmail.com
+[2025-01-03 14:07:21.824] [file_logger] [info] User found with ID: 6
+[2025-01-03 14:07:21.824] [file_logger] [info] Checking stock for product ID: 101 with requested quantity: 2
+[2025-01-03 14:07:21.824] [file_logger] [warning] Product ID 101 not found
+[2025-01-03 14:07:21.829] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 14:07:21.838] [file_logger] [info] Fetching user data from database for email: kunal54@gmail.com
+[2025-01-03 14:07:21.838] [file_logger] [info] User found with ID: 6
+[2025-01-03 14:07:21.838] [file_logger] [info] Checking stock for product ID: 1 with requested quantity: 201
+[2025-01-03 14:07:21.839] [file_logger] [warning] Insufficient stock for product ID 1. Requested: 201, Available: 100
+[2025-01-03 14:07:21.844] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 14:07:21.852] [file_logger] [info] Fetching user data from database for email: kunal54@gmail.com
+[2025-01-03 14:07:21.853] [file_logger] [info] User found with ID: 6
+[2025-01-03 14:07:21.853] [file_logger] [info] Checking stock for product ID: 1 with requested quantity: 2
+[2025-01-03 14:07:21.853] [file_logger] [info] Checking stock for product ID: 2 with requested quantity: 1
+[2025-01-03 14:07:21.854] [file_logger] [info] Inserting order into the database for user ID: 6 with total price: 5703.21
+[2025-01-03 14:07:21.856] [file_logger] [info] Order placed successfully with order ID: 13
+[2025-01-03 14:07:21.857] [file_logger] [info] Inserting product details for order ID: 13. Product ID: 1, Quantity: 2, Price: 150.5
+[2025-01-03 14:07:21.862] [file_logger] [info] Inserting product details for order ID: 13. Product ID: 2, Quantity: 1, Price: 5402.21
+[2025-01-03 14:07:21.869] [file_logger] [info] All products added to order details. Stock updated.
+[2025-01-03 14:07:21.898] [file_logger] [warning] Access denied for user: kunal54@gmail.com. Only admins can add products
+[2025-01-03 14:07:21.932] [file_logger] [error] Invalid JSON in request body
+[2025-01-03 14:07:21.960] [file_logger] [info] Adding product: name=Shirt, price=5201, stock=12, category=cloths
+[2025-01-03 14:07:21.963] [file_logger] [info] Product added successfully: Shirt
+[2025-01-03 14:07:21.985] [file_logger] [info] Updating product with ID: 1. New data - name=Updated Product, price=150.5, stock=100, category=Electronics
+[2025-01-03 14:07:21.987] [file_logger] [info] Product with ID: 1 successfully updated
+[2025-01-03 14:07:22.013] [file_logger] [warning] Access denied for user: user@example.com. Only admins can update products
+[2025-01-03 14:07:22.034] [file_logger] [warning] Access denied for user: admin@example.com. Only admins can update products
+[2025-01-03 14:07:22.057] [file_logger] [warning] Access denied for user: admin@example.com. Only admins can update products
+[2025-01-03 14:07:22.077] [file_logger] [warning] Access denied for user: admin@example.com. Only admins can update products
+[2025-01-03 14:07:22.099] [file_logger] [warning] Access denied for user: admin@example.com. Only admins can update products
+[2025-01-03 14:08:11.304] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 14:08:11.312] [file_logger] [error] Invalid JSON in request body
+[2025-01-03 14:08:11.318] [file_logger] [info] Received request to place order for user: kunal0054@gmail.com
+[2025-01-03 14:08:11.327] [file_logger] [info] Fetching user data from database for email: kunal0054@gmail.com
+[2025-01-03 14:08:11.327] [file_logger] [warning] User with email kunal0054@gmail.com not found
+[2025-01-03 14:08:11.332] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 14:08:11.340] [file_logger] [info] Fetching user data from database for email: kunal54@gmail.com
+[2025-01-03 14:08:11.340] [file_logger] [info] User found with ID: 6
+[2025-01-03 14:08:11.340] [file_logger] [info] Checking stock for product ID: 101 with requested quantity: 2
+[2025-01-03 14:08:11.341] [file_logger] [warning] Product ID 101 not found
+[2025-01-03 14:08:11.346] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 14:08:11.355] [file_logger] [info] Fetching user data from database for email: kunal54@gmail.com
+[2025-01-03 14:08:11.355] [file_logger] [info] User found with ID: 6
+[2025-01-03 14:08:11.355] [file_logger] [info] Checking stock for product ID: 1 with requested quantity: 201
+[2025-01-03 14:08:11.355] [file_logger] [warning] Insufficient stock for product ID 1. Requested: 201, Available: 100
+[2025-01-03 14:08:11.360] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 14:08:11.369] [file_logger] [info] Fetching user data from database for email: kunal54@gmail.com
+[2025-01-03 14:08:11.370] [file_logger] [info] User found with ID: 6
+[2025-01-03 14:08:11.370] [file_logger] [info] Checking stock for product ID: 1 with requested quantity: 2
+[2025-01-03 14:08:11.370] [file_logger] [info] Checking stock for product ID: 2 with requested quantity: 1
+[2025-01-03 14:08:11.370] [file_logger] [info] Inserting order into the database for user ID: 6 with total price: 5703.21
+[2025-01-03 14:08:11.373] [file_logger] [info] Order placed successfully with order ID: 14
+[2025-01-03 14:08:11.373] [file_logger] [info] Inserting product details for order ID: 14. Product ID: 1, Quantity: 2, Price: 150.5
+[2025-01-03 14:08:11.378] [file_logger] [info] Inserting product details for order ID: 14. Product ID: 2, Quantity: 1, Price: 5402.21
+[2025-01-03 14:08:11.383] [file_logger] [info] All products added to order details. Stock updated.
+[2025-01-03 14:08:11.404] [file_logger] [warning] Access denied for user: kunal54@gmail.com. Only admins can add products
+[2025-01-03 14:08:11.431] [file_logger] [error] Invalid JSON in request body
+[2025-01-03 14:08:11.464] [file_logger] [info] Adding product: name=Shirt, price=5201, stock=12, category=cloths
+[2025-01-03 14:08:11.467] [file_logger] [info] Product added successfully: Shirt
+[2025-01-03 14:08:11.494] [file_logger] [info] Updating product with ID: 1. New data - name=Updated Product, price=150.5, stock=100, category=Electronics
+[2025-01-03 14:08:11.498] [file_logger] [info] Product with ID: 1 successfully updated
+[2025-01-03 14:08:11.526] [file_logger] [warning] Access denied for user: user@example.com. Only admins can update products
+[2025-01-03 14:08:11.547] [file_logger] [error] Invalid JSON in request body for product ID: 1
+[2025-01-03 14:08:11.568] [file_logger] [info] Updating product with ID: 9999. New data - name=Updated Product, price=150.5, stock=100, category=Electronics
+[2025-01-03 14:08:11.569] [file_logger] [info] Product with ID: 9999 successfully updated
+[2025-01-03 14:08:11.589] [file_logger] [error] Invalid JSON in request body for product ID: 1
+[2025-01-03 14:08:11.610] [file_logger] [error] Invalid JSON in request body for product ID: 1
+[2025-01-03 14:26:40.306] [file_logger] [info] Starting user login process.
+[2025-01-03 14:26:40.315] [file_logger] [info] Connected to the database successfully.
+[2025-01-03 14:26:40.501] [file_logger] [info] User registered successfully: admin@gmail.com
+[2025-01-03 14:28:12.696] [file_logger] [error] Missing required fields in JSON for product ID: 1
+[2025-01-03 14:35:51.144] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 14:35:51.153] [file_logger] [error] Invalid JSON in request body
+[2025-01-03 14:35:51.158] [file_logger] [info] Received request to place order for user: kunal0054@gmail.com
+[2025-01-03 14:35:51.166] [file_logger] [info] Fetching user data from database for email: kunal0054@gmail.com
+[2025-01-03 14:35:51.167] [file_logger] [warning] User with email kunal0054@gmail.com not found
+[2025-01-03 14:35:51.172] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 14:35:51.180] [file_logger] [info] Fetching user data from database for email: kunal54@gmail.com
+[2025-01-03 14:35:51.180] [file_logger] [info] User found with ID: 6
+[2025-01-03 14:35:51.180] [file_logger] [info] Checking stock for product ID: 101 with requested quantity: 2
+[2025-01-03 14:35:51.181] [file_logger] [warning] Product ID 101 not found
+[2025-01-03 14:35:51.186] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 14:35:51.194] [file_logger] [info] Fetching user data from database for email: kunal54@gmail.com
+[2025-01-03 14:35:51.195] [file_logger] [info] User found with ID: 6
+[2025-01-03 14:35:51.195] [file_logger] [info] Checking stock for product ID: 1 with requested quantity: 201
+[2025-01-03 14:35:51.195] [file_logger] [warning] Insufficient stock for product ID 1. Requested: 201, Available: 100
+[2025-01-03 14:35:51.200] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 14:35:51.209] [file_logger] [info] Fetching user data from database for email: kunal54@gmail.com
+[2025-01-03 14:35:51.209] [file_logger] [info] User found with ID: 6
+[2025-01-03 14:35:51.209] [file_logger] [info] Checking stock for product ID: 1 with requested quantity: 2
+[2025-01-03 14:35:51.210] [file_logger] [info] Checking stock for product ID: 2 with requested quantity: 1
+[2025-01-03 14:35:51.210] [file_logger] [info] Inserting order into the database for user ID: 6 with total price: 5703.21
+[2025-01-03 14:35:51.213] [file_logger] [info] Order placed successfully with order ID: 15
+[2025-01-03 14:35:51.213] [file_logger] [info] Inserting product details for order ID: 15. Product ID: 1, Quantity: 2, Price: 150.5
+[2025-01-03 14:35:51.219] [file_logger] [info] Inserting product details for order ID: 15. Product ID: 2, Quantity: 1, Price: 5402.21
+[2025-01-03 14:35:51.224] [file_logger] [info] All products added to order details. Stock updated.
+[2025-01-03 14:35:51.246] [file_logger] [warning] Access denied for user: kunal54@gmail.com. Only admins can add products
+[2025-01-03 14:35:51.271] [file_logger] [error] Invalid JSON in request body
+[2025-01-03 14:35:51.298] [file_logger] [info] Adding product: name=Shirt, price=5201, stock=12, category=cloths
+[2025-01-03 14:35:51.300] [file_logger] [info] Product added successfully: Shirt
+[2025-01-03 14:35:51.322] [file_logger] [info] Updating product with ID: 1. New data - name=Updated Product, price=150.5, stock=100, category=Electronics
+[2025-01-03 14:35:51.352] [file_logger] [warning] Access denied for user: user@example.com. Only admins can update products
+[2025-01-03 14:35:51.374] [file_logger] [error] Invalid JSON in request body for product ID: 1
+[2025-01-03 14:35:51.399] [file_logger] [info] Updating product with ID: 9999. New data - name=Updated Product, price=150.5, stock=100, category=Electronics
+[2025-01-03 14:35:51.425] [file_logger] [error] Invalid JSON in request body for product ID: 1
+[2025-01-03 14:35:51.446] [file_logger] [error] Invalid JSON in request body for product ID: 1
+[2025-01-03 14:40:07.242] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 14:40:07.250] [file_logger] [error] Invalid JSON in request body
+[2025-01-03 14:40:07.255] [file_logger] [info] Received request to place order for user: kunal0054@gmail.com
+[2025-01-03 14:40:07.263] [file_logger] [info] Fetching user data from database for email: kunal0054@gmail.com
+[2025-01-03 14:40:07.264] [file_logger] [warning] User with email kunal0054@gmail.com not found
+[2025-01-03 14:40:07.269] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 14:40:07.277] [file_logger] [info] Fetching user data from database for email: kunal54@gmail.com
+[2025-01-03 14:40:07.277] [file_logger] [info] User found with ID: 6
+[2025-01-03 14:40:07.277] [file_logger] [info] Checking stock for product ID: 101 with requested quantity: 2
+[2025-01-03 14:40:07.278] [file_logger] [warning] Product ID 101 not found
+[2025-01-03 14:40:07.283] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 14:40:07.291] [file_logger] [info] Fetching user data from database for email: kunal54@gmail.com
+[2025-01-03 14:40:07.292] [file_logger] [info] User found with ID: 6
+[2025-01-03 14:40:07.292] [file_logger] [info] Checking stock for product ID: 1 with requested quantity: 201
+[2025-01-03 14:40:07.292] [file_logger] [warning] Insufficient stock for product ID 1. Requested: 201, Available: 98
+[2025-01-03 14:40:07.297] [file_logger] [info] Received request to place order for user: kunal54@gmail.com
+[2025-01-03 14:40:07.306] [file_logger] [info] Fetching user data from database for email: kunal54@gmail.com
+[2025-01-03 14:40:07.306] [file_logger] [info] User found with ID: 6
+[2025-01-03 14:40:07.306] [file_logger] [info] Checking stock for product ID: 1 with requested quantity: 2
+[2025-01-03 14:40:07.306] [file_logger] [info] Checking stock for product ID: 2 with requested quantity: 1
+[2025-01-03 14:40:07.306] [file_logger] [info] Inserting order into the database for user ID: 6 with total price: 5703.21
+[2025-01-03 14:40:07.311] [file_logger] [info] Order placed successfully with order ID: 16
+[2025-01-03 14:40:07.311] [file_logger] [info] Inserting product details for order ID: 16. Product ID: 1, Quantity: 2, Price: 150.5
+[2025-01-03 14:40:07.316] [file_logger] [info] Inserting product details for order ID: 16. Product ID: 2, Quantity: 1, Price: 5402.21
+[2025-01-03 14:40:07.321] [file_logger] [info] All products added to order details. Stock updated.
+[2025-01-03 14:40:07.343] [file_logger] [warning] Access denied for user: kunal54@gmail.com. Only admins can add products
+[2025-01-03 14:40:07.369] [file_logger] [error] Invalid JSON in request body
+[2025-01-03 14:40:07.395] [file_logger] [info] Adding product: name=Shirt, price=5201, stock=12, category=cloths
+[2025-01-03 14:40:07.397] [file_logger] [info] Product added successfully: Shirt
+[2025-01-03 14:40:07.419] [file_logger] [info] Updating product with ID: 1. New data - name=Updated Product, price=150.5, stock=100, category=Electronics
+[2025-01-03 14:40:07.448] [file_logger] [warning] Access denied for user: user@example.com. Only admins can update products
+[2025-01-03 14:40:07.473] [file_logger] [error] Invalid JSON in request body for product ID: 1
+[2025-01-03 14:40:07.496] [file_logger] [info] Updating product with ID: 9999. New data - name=Updated Product, price=150.5, stock=100, category=Electronics
+[2025-01-03 14:40:07.523] [file_logger] [error] Invalid JSON in request body for product ID: 1
+[2025-01-03 14:40:07.545] [file_logger] [error] Invalid JSON in request body for product ID: 1
+[2025-01-03 14:44:52.282] [file_logger] [info] Adding product: name=Updated Product, price=150.5, stock=100, category=Electronics
+[2025-01-03 14:44:52.285] [file_logger] [info] Product added successfully: Updated Product
+[2025-01-03 15:15:37.221] [file_logger] [info] Starting user login process.
+[2025-01-03 15:15:37.227] [file_logger] [info] Connected to the database successfully.
+[2025-01-03 15:15:37.414] [file_logger] [info] User registered successfully: admin@gmail.com
+[2025-01-03 16:34:43.376] [file_logger] [info] Updating product with ID: 1. New data - name=Updated Product, price=150.5, stock=100, category=Electronics
+[2025-01-03 16:34:43.406] [file_logger] [warning] Access denied for user: user@example.com. Only admins can update products
+[2025-01-03 16:34:43.430] [file_logger] [error] Invalid JSON in request body for product ID: 1
+[2025-01-03 16:34:43.454] [file_logger] [info] Updating product with ID: 9999. New data - name=Updated Product, price=150.5, stock=100, category=Electronics
+[2025-01-03 16:34:43.481] [file_logger] [error] Invalid JSON in request body for product ID: 1
+[2025-01-03 16:34:43.503] [file_logger] [error] Invalid JSON in request body for product ID: 1
+[2025-01-03 16:36:07.129] [file_logger] [info] Updating product with ID: 2. New data - name=Updated Product, price=150.5, stock=100, category=Electronics
+[2025-01-03 16:36:07.169] [file_logger] [error] Invalid JSON in request body for product ID: 1
+[2025-01-03 16:38:07.770] [file_logger] [error] Invalid JSON in request body for product ID: 2
+[2025-01-03 16:42:19.420] [file_logger] [error] Invalid JSON in request body for product ID: 2
+[2025-01-03 16:43:49.191] [file_logger] [info] Updating product with ID: 2. New data - name=Updated Product, price=150.5, stock=100, category=Electronics
+[2025-01-03 16:43:49.200] [file_logger] [info] Product with ID: 2 successfully updated
+[2025-01-03 16:45:00.675] [file_logger] [info] Updating product with ID: 2. New data - name=Updated Product, price=150.5, stock=100, category=Electronics
+[2025-01-03 16:45:00.680] [file_logger] [info] Product with ID: 2 successfully updated
+[2025-01-03 16:45:00.702] [file_logger] [info] Updating product with ID: 9999. New data - name=Updated Product, price=150.5, stock=100, category=Electronics
+[2025-01-03 16:45:00.706] [file_logger] [error] Invalid product ID: 9999
+[2025-01-03 16:45:36.003] [file_logger] [info] Updating product with ID: 2. New data - name=Updated Product, price=150.5, stock=100, category=Electronics
+[2025-01-03 16:45:36.008] [file_logger] [info] Product with ID: 2 successfully updated
+[2025-01-03 16:45:36.031] [file_logger] [info] Updating product with ID: 9999. New data - name=Updated Product, price=150.5, stock=100, category=Electronics
+[2025-01-03 16:45:36.036] [file_logger] [error] Invalid product ID: 9999
+[2025-01-03 16:46:30.649] [file_logger] [info] Updating product with ID: 2. New data - name=Updated Product, price=150.5, stock=100, category=Electronics
+[2025-01-03 16:46:30.654] [file_logger] [info] Product with ID: 2 successfully updated
+[2025-01-03 16:46:30.675] [file_logger] [info] Updating product with ID: 9999. New data - name=Updated Product, price=150.5, stock=100, category=Electronics
+[2025-01-03 16:46:30.679] [file_logger] [error] Invalid product ID: 9999
+[2025-01-03 16:56:26.523] [file_logger] [warning] Access denied for user: kunal54@gmail.com. Only admins can delete products
+[2025-01-03 16:56:26.554] [file_logger] [info] Attempting to delete product with ID: 140
+[2025-01-03 16:56:26.563] [file_logger] [error] Product with ID: 140 not found in the database
+[2025-01-03 16:56:26.593] [file_logger] [info] Attempting to delete product with ID: 14
+[2025-01-03 16:56:26.601] [file_logger] [info] Product with ID: 14 successfully deleted
+[2025-01-03 17:11:53.475] [file_logger] [info] Received request to update order status for order ID: 1 by user: admin@example.com
+[2025-01-03 17:11:53.493] [file_logger] [warning] Permission denied for user: admin@example.com. Only admins can update order status.
+[2025-01-03 17:11:53.507] [file_logger] [info] Received request to update order status for order ID: 1 by user: user@example.com
+[2025-01-03 17:11:53.516] [file_logger] [warning] Permission denied for user: user@example.com. Only admins can update order status.
+[2025-01-03 17:11:53.521] [file_logger] [info] Received request to update order status for order ID: 1 by user: admin@example.com
+[2025-01-03 17:11:53.529] [file_logger] [warning] Permission denied for user: admin@example.com. Only admins can update order status.
+[2025-01-03 17:11:53.534] [file_logger] [info] Received request to update order status for order ID: 1 by user: admin@example.com
+[2025-01-03 17:11:53.543] [file_logger] [warning] Permission denied for user: admin@example.com. Only admins can update order status.
+[2025-01-03 17:13:12.563] [file_logger] [info] Received request to update order status for order ID: 1 by user: admin@gmail.com
+[2025-01-03 17:13:12.582] [file_logger] [info] Updating order ID: 1 with new status: shipped
+[2025-01-03 17:13:12.582] [file_logger] [warning] Failed to update status for order ID: 1. Response code: 404
+[2025-01-03 17:13:12.593] [file_logger] [info] Received request to update order status for order ID: 1 by user: user@example.com
+[2025-01-03 17:13:12.601] [file_logger] [warning] Permission denied for user: user@example.com. Only admins can update order status.
+[2025-01-03 17:13:12.606] [file_logger] [info] Received request to update order status for order ID: 1 by user: admin@gmail.com
+[2025-01-03 17:13:12.620] [file_logger] [error] Exception: cannot find key while updating status for order ID: 1
+[2025-01-03 17:13:12.625] [file_logger] [info] Received request to update order status for order ID: 1 by user: admin@gmail.com
+[2025-01-03 17:13:12.639] [file_logger] [info] Updating order ID: 1 with new status: shipped
+[2025-01-03 17:13:12.639] [file_logger] [warning] Failed to update status for order ID: 1. Response code: 404
+[2025-01-03 17:15:21.121] [file_logger] [info] Received request to update order status for order ID: 2 by user: admin@gmail.com
+[2025-01-03 17:15:21.134] [file_logger] [info] Updating order ID: 2 with new status: shipped
+[2025-01-03 17:15:21.137] [file_logger] [info] Successfully updated status for order ID: 2
+[2025-01-03 17:15:21.148] [file_logger] [info] Received request to update order status for order ID: 1 by user: user@example.com
+[2025-01-03 17:15:21.156] [file_logger] [warning] Permission denied for user: user@example.com. Only admins can update order status.
+[2025-01-03 17:15:21.161] [file_logger] [info] Received request to update order status for order ID: 1 by user: admin@gmail.com
+[2025-01-03 17:15:21.174] [file_logger] [error] Exception: cannot find key while updating status for order ID: 1
+[2025-01-03 17:15:21.179] [file_logger] [info] Received request to update order status for order ID: 1 by user: admin@gmail.com
+[2025-01-03 17:15:21.192] [file_logger] [info] Updating order ID: 1 with new status: shipped
+[2025-01-03 17:15:21.193] [file_logger] [warning] Failed to update status for order ID: 1. Response code: 404
+[2025-01-03 17:16:19.457] [file_logger] [info] Received request to update order status for order ID: 2 by user: admin@gmail.com
+[2025-01-03 17:16:19.471] [file_logger] [info] Updating order ID: 2 with new status: shipped
+[2025-01-03 17:16:19.471] [file_logger] [warning] Failed to update status for order ID: 2. Response code: 400
+[2025-01-03 17:16:19.481] [file_logger] [info] Received request to update order status for order ID: 1 by user: user@example.com
+[2025-01-03 17:16:19.490] [file_logger] [warning] Permission denied for user: user@example.com. Only admins can update order status.
+[2025-01-03 17:16:19.494] [file_logger] [info] Received request to update order status for order ID: 1 by user: admin@gmail.com
+[2025-01-03 17:16:19.508] [file_logger] [error] Exception: cannot find key while updating status for order ID: 1
+[2025-01-03 17:16:19.512] [file_logger] [info] Received request to update order status for order ID: 1 by user: admin@gmail.com
+[2025-01-03 17:16:19.525] [file_logger] [info] Updating order ID: 1 with new status: shipped
+[2025-01-03 17:16:19.526] [file_logger] [warning] Failed to update status for order ID: 1. Response code: 404
+[2025-01-03 17:18:03.438] [file_logger] [info] Received request to update order status for order ID: 2 by user: admin@gmail.com
+[2025-01-03 17:18:03.458] [file_logger] [info] Updating order ID: 2 with new status: shipped
+[2025-01-03 17:18:03.458] [file_logger] [warning] Failed to update status for order ID: 2. Response code: 400
+[2025-01-03 17:18:03.469] [file_logger] [info] Received request to update order status for order ID: 1 by user: user@example.com
+[2025-01-03 17:18:03.477] [file_logger] [warning] Permission denied for user: user@example.com. Only admins can update order status.
+[2025-01-03 17:18:03.482] [file_logger] [info] Received request to update order status for order ID: 1 by user: admin@gmail.com
+[2025-01-03 17:18:03.495] [file_logger] [error] Exception: cannot find key while updating status for order ID: 1
+[2025-01-03 17:18:03.500] [file_logger] [info] Received request to update order status for order ID: 1 by user: admin@gmail.com
+[2025-01-03 17:18:03.513] [file_logger] [info] Updating order ID: 1 with new status: shipped
+[2025-01-03 17:18:03.514] [file_logger] [warning] Failed to update status for order ID: 1. Response code: 404
+[2025-01-03 17:20:25.077] [file_logger] [info] Received request to update order status for order ID: 9 by user: admin@gmail.com
+[2025-01-03 17:20:25.092] [file_logger] [info] Updating order ID: 9 with new status: shipped
+[2025-01-03 17:20:25.096] [file_logger] [info] Successfully updated status for order ID: 9
+[2025-01-03 17:20:25.102] [file_logger] [info] Received request to update order status for order ID: 1 by user: user@example.com
+[2025-01-03 17:20:25.112] [file_logger] [warning] Permission denied for user: user@example.com. Only admins can update order status.
+[2025-01-03 17:20:25.117] [file_logger] [info] Received request to update order status for order ID: 1 by user: admin@gmail.com
+[2025-01-03 17:20:25.132] [file_logger] [error] Exception: cannot find key while updating status for order ID: 1
+[2025-01-03 17:20:25.137] [file_logger] [info] Received request to update order status for order ID: 1 by user: admin@gmail.com
+[2025-01-03 17:20:25.151] [file_logger] [info] Updating order ID: 1 with new status: shipped
+[2025-01-03 17:20:25.151] [file_logger] [warning] Failed to update status for order ID: 1. Response code: 404
+[2025-01-03 17:23:35.543] [file_logger] [info] Received request to update order status for order ID: 1 by user: admin@gmail.com
+[2025-01-03 17:23:35.556] [file_logger] [error] Exception: cannot find key while updating status for order ID: 1
+[2025-01-03 17:23:35.561] [file_logger] [info] Received request to update order status for order ID: 1 by user: admin@gmail.com
+[2025-01-03 17:23:35.575] [file_logger] [info] Updating order ID: 1 with new status: shipped
+[2025-01-03 17:23:35.575] [file_logger] [warning] Failed to update status for order ID: 1. Response code: 404
+[2025-01-03 17:24:10.855] [file_logger] [info] Received request to update order status for order ID: 1 by user: admin@gmail.com
+[2025-01-03 17:24:10.868] [file_logger] [error] Missing fields in the request body for order ID: 1
+[2025-01-03 17:24:10.873] [file_logger] [info] Received request to update order status for order ID: 1 by user: admin@gmail.com
+[2025-01-03 17:24:10.886] [file_logger] [info] Updating order ID: 1 with new status: shipped
+[2025-01-03 17:24:10.886] [file_logger] [warning] Failed to update status for order ID: 1. Response code: 404
+[2025-01-03 17:26:20.279] [file_logger] [info] Starting user registration process.
+[2025-01-03 17:26:20.284] [file_logger] [info] Connected to the database successfully.
+[2025-01-03 17:26:20.286] [file_logger] [warning] User registration failed. Email already exists: kunal123@gmail.com
+[2025-01-03 17:33:19.590] [file_logger] [info] Starting user login process.
+[2025-01-03 17:33:19.595] [file_logger] [info] Connected to the database successfully.
+[2025-01-03 17:33:19.782] [file_logger] [info] User logged in successfully: admin@gmail.com
+[2025-01-03 17:33:28.892] [file_logger] [error] Unexpected error: logger with name 'file_logger' already exists
+[2025-01-03 17:53:45.933] [file_logger] [info] Starting user login process.
+[2025-01-03 17:53:45.938] [file_logger] [info] Connected to the database successfully.
+[2025-01-03 17:53:45.938] [file_logger] [warning] Missing fields in request body.

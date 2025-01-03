@@ -8,7 +8,7 @@
 
 ProductDatabase product_db;
 
-crow::json::wvalue getAllProducts()
+crow::response getAllProducts()
 {
     std::vector<crow::json::wvalue> vector_of_wvalue;
 
@@ -29,32 +29,36 @@ crow::json::wvalue getAllProducts()
     }
 
     resp = crow::json::wvalue::list(vector_of_wvalue);
-    return resp;
+    return crow::response(200,resp);
 }
 
 crow::response addProduct(const crow::request &req, std::string user_email)
 {
-    // Initialize file logger
-    auto file_logger = spdlog::basic_logger_mt("file_logger", "/home/kunal/crowcpp/src/logging/logs.txt");
-    spdlog::set_default_logger(file_logger);
-
-    // Check if the user is an admin
-    if (!isAdmin(user_email))
-    {
-        spdlog::warn("Access denied for user: {}. Only admins can add products", user_email);
-        return crow::response(403, "Access denied: Only admins can add products");
-    }
-
-    // Connect to the database
-    sql::Connection *con = getDbConnection();
-    if (!con)
-    {
-        spdlog::error("Failed to connect to the database");
-        return crow::response(500, "Failed to connect to the database");
-    }
-
     try
     {
+        // Check if the logger already exists
+        auto file_logger = spdlog::get("file_logger");
+        if (!file_logger) {
+            // Create the logger if it doesn't exist
+            file_logger = spdlog::basic_logger_mt("file_logger", "/home/kunal/crowcpp/src/logging/logs.txt");
+            spdlog::set_default_logger(file_logger);
+        }
+
+        // Check if the user is an admin
+        if (!isAdmin(user_email))
+        {
+            spdlog::warn("Access denied for user: {}. Only admins can add products", user_email);
+            return crow::response(403, "Access denied: Only admins can add products");
+        }
+
+        // Connect to the database
+        sql::Connection *con = getDbConnection();
+        if (!con)
+        {
+            spdlog::error("Failed to connect to the database");
+            return crow::response(500, "Failed to connect to the database");
+        }
+
         // Parse the incoming product data
         auto json_data = crow::json::load(req.body);
         if (!json_data)
@@ -63,6 +67,12 @@ crow::response addProduct(const crow::request &req, std::string user_email)
             delete con;
             return crow::response(400, "Invalid JSON");
         }
+
+        if (!json_data.has("product_name") || !json_data.has("price") || !json_data.has("stock") || !json_data.has("category")) {
+        spdlog::error("Missing required fields in JSON to add product");
+        return crow::response(400, "Missing required fields");
+    }
+
 
         // Extract product information from JSON
         std::string name = json_data["product_name"].s(); 
@@ -84,7 +94,6 @@ crow::response addProduct(const crow::request &req, std::string user_email)
     {
         // Log and return an error response
         spdlog::error("Database error while adding product: {}", e.what());
-        delete con;
         return crow::response(500, "Database error: " + std::string(e.what()));
     }
 }
@@ -108,10 +117,14 @@ crow::response getProductById(const crow::request &req, int id)
 }
 
 crow::response updateProductById(const crow::request& req, int id, const std::string& user_email) {
+    auto file_logger = spdlog::get("file_logger");
+        if (!file_logger) {
+            // Create the logger if it doesn't exist
+            file_logger = spdlog::basic_logger_mt("file_logger", "/home/kunal/crowcpp/src/logging/logs.txt");
+            spdlog::set_default_logger(file_logger);
+        }
 
-
-    auto file_logger = spdlog::basic_logger_mt("file_logger", "/home/kunal/crowcpp/src/logging/logs.txt");
-    spdlog::set_default_logger(file_logger);
+    // Check if the user is an admin
     if (!isAdmin(user_email)) {
         spdlog::warn("Access denied for user: {}. Only admins can update products", user_email);
         return crow::response(403, "Access denied: Only admins can update products");
@@ -124,39 +137,108 @@ crow::response updateProductById(const crow::request& req, int id, const std::st
         return crow::response(400, "Invalid JSON");
     }
 
+    // Check if all required fields are present
+    if (!json_data.has("product_name") || !json_data.has("price") || !json_data.has("stock") || !json_data.has("category")) {
+        spdlog::error("Missing required fields in JSON for product ID: {}", id);
+        return crow::response(400, "Missing required fields");
+    }
+
     // Extract product information from JSON
     std::string name = json_data["product_name"].s();
-    auto price = json_data["price"].d();
-    auto stock = json_data["stock"].i();
+    double price = json_data["price"].d();
+    int stock = json_data["stock"].i();
     std::string category = json_data["category"].s();
 
-    spdlog::info("Updating product with ID: {}. New data - name={}, price={}, stock={}, category={}", id,name, price, stock, category);
+    // Validate the extracted fields
+    if (name.empty()) {
+        spdlog::error("Invalid product name for product ID: {}", id);
+        return crow::response(400, "Invalid product name");
+    }
+    if (price < 0) {
+        spdlog::error("Invalid price for product ID: {}. Price must be non-negative", id);
+        return crow::response(400, "Invalid price");
+    }
+    if (stock < 0) {
+        spdlog::error("Invalid stock for product ID: {}. Stock must be non-negative", id);
+        return crow::response(400, "Invalid stock");
+    }
+    if (category.empty()) {
+        spdlog::error("Invalid category for product ID: {}", id);
+        return crow::response(400, "Invalid category");
+    }
 
-    // Update the product in the database
-    product_db.update_product(Product(id, name, price, stock, category, "", ""));
+    spdlog::info("Updating product with ID: {}. New data - name={}, price={}, stock={}, category={}", id, name, price, stock, category);
 
-    spdlog::info("Product with ID: {} successfully updated", id);
+    // Check if the product exists in the database before attempting to update
+    sql::Connection *conn=getDbConnection();
+    sql::PreparedStatement *stmt=conn->prepareStatement("select product_name from products where id=?");
+    sql::ResultSet *res;
+    stmt->setInt(1,id);
+    res=stmt->executeQuery();
+    if(!res->next())
+    {
+        spdlog::error("Invalid product ID: {}", id);
+        return crow::response(400, "Invalid Product id.");
+    }
 
-    return crow::response(200, "Product updated");
+    // Proceed with the update in the database
+    try {
+        product_db.update_product(Product(id, name, price, stock, category, "", ""));
+        spdlog::info("Product with ID: {} successfully updated", id);
+        return crow::response(200, "Product updated");
+    } catch (const std::exception& e) {
+        spdlog::error("Failed to update product with ID: {}. Error: {}", id, e.what());
+        return crow::response(500, "Internal Server Error");
+    }
 }
 
 crow::response deleteProductById(int id, const std::string& user_email) {
+    auto file_logger = spdlog::get("file_logger");
+    if (!file_logger) {
+        // Create the logger if it doesn't exist
+        file_logger = spdlog::basic_logger_mt("file_logger", "/home/kunal/crowcpp/src/logging/logs.txt");
+        spdlog::set_default_logger(file_logger);
+    }
 
-    auto file_logger = spdlog::basic_logger_mt("file_logger", "/home/kunal/crowcpp/src/logging/logs.txt");
-    spdlog::set_default_logger(file_logger);
+    // Check if the user is an admin
     if (!isAdmin(user_email)) {
         spdlog::warn("Access denied for user: {}. Only admins can delete products", user_email);
         return crow::response(403, "Access denied: Only admins can delete products");
     }
 
-    spdlog::info("Deleting product with ID: {}", id);
+    spdlog::info("Attempting to delete product with ID: {}", id);
 
-    // Delete the product from the database
-    product_db.delete_product(id);
+    try {
+        sql::Connection *conn=getDbConnection();
 
-    spdlog::info("Product with ID: {} successfully deleted", id);
+        // Check if the product exists in the database
+        std::unique_ptr<sql::PreparedStatement> stmt(conn->prepareStatement("SELECT id FROM products WHERE id = ?"));
+        stmt->setInt(1, id);
+        std::unique_ptr<sql::ResultSet> res(stmt->executeQuery());
 
-    return crow::response(200, "Product deleted");
+        if (!res->next()) {
+            // Product not found in the database
+            spdlog::error("Product with ID: {} not found in the database", id);
+            return crow::response(404, "Product not found");
+        }
+
+        // SQL query to delete the product
+        std::unique_ptr<sql::PreparedStatement> delete_stmt(conn->prepareStatement("DELETE FROM products WHERE id = ?"));
+        delete_stmt->setInt(1, id);
+
+        // Execute the delete query
+        delete_stmt->executeUpdate();
+
+        spdlog::info("Product with ID: {} successfully deleted", id);
+        return crow::response(200, "Product deleted");
+
+    } catch (sql::SQLException &e) {
+        spdlog::error("SQL error while deleting product with ID: {}. Error: {}", id, e.what());
+        return crow::response(500, "Internal Server Error");
+    } catch (const std::exception &e) {
+        spdlog::error("Unexpected error while deleting product with ID: {}. Error: {}", id, e.what());
+        return crow::response(500, "Internal Server Error");
+    }
 }
 
 crow::response getAvailableStock(const crow::request &req, std::string user_email)
